@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>Birthday countdown</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,39 +12,58 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            background-color:rgb(247, 228, 173); 
-            background-image: url('image/pm.pnj');
+            min-height: 100vh;
+            background: linear-gradient(to right, #ffdbac, #bbedd9);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+        }
 
         .countdown-container {
+            position:relative;
+             /* Adjust the distance from the bottom */
+            right: -13%;
+            transform: translateX(-50%);
             text-align: center;
-            color:rgb(174, 132, 236)
+            color: rgba(249, 7, 200, 0.941);
+            background-color: rgba(248, 227, 156, 0.9);
+            padding:0%;
+            border-radius: 10px;
+            box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+            margin-left: 125px;
+            margin-top: -250px;
+            min-width: 220px;
+            max-height: 530px;
+        }
+
+        .countdown-container img {
+            width: 250px; /* Make the image fill the width of the container */
+            height: 530px; /* Maintain the aspect ratio */
+            border-radius: 5px; /* Optional: Add border-radius to the image */
+       
+            
         }
 
         #countdown {
-            font-size: 2em;
+            font-size:x-large;
             margin-top: 20px;
-            color:rgba(210, 94, 98, 0.922);
+            color: rgba(61, 6, 243, 0.97);
         }
     </style>
 </head>
 <body>
 
 <div class="countdown-container">
-    <h1>Wishing you a future filled with love, laughter, and a lifetime of beautiful moments as you journey into wedded bliss."
-
-
-
-
-
-    </h1>
+    
+    <img src="https://github.com/patefkae/ytt.github.io/blob/main/WhatsApp%20Image%202024-08-23%20at%2017.58.21_ae59636b.jpg?raw=true" alt="Your Image Description">
+    <h1>Birthday countdown</h1>
     <div id="countdown"></div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Set the date we're counting down to
-        const countDownDate = new Date("feb 17, 2024 08:00:00").getTime();
+        const countDownDate = new Date("Aug 24, 2024 00:00:00").getTime();
 
         // Update the countdown every 1 second
         const x = setInterval(function () {
@@ -61,12 +80,12 @@
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Display the countdown
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
+            document.getElementById("countdown").innerHTML = days + "d :" + hours + "h :" + minutes + "m :" + seconds + "s " ;
+            
             // If the countdown is over, display a message
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "CONGRATULATIONS";
+                document.getElementById("countdown").innerHTML = "HAPPY BIRTHDAY MASI";
             }
         }, 1000);
     });
